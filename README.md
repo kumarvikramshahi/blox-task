@@ -2,6 +2,9 @@
 NOTE: Help of perplexity.ai is being taken for fixing grammer issue in text answer in Questions 1, and for some code help in Questions 3.
 
 Each question's answers are located in their respective files, along with the corresponding code.
+As instructed in assignment Question 1 is mandetory and we need to solve any 2 out of others.
+so i have solved Question 1st, 2nd, 3rd, and 4th. 3rd question is not complete i just gave a try but can't solve completly.
+
 ## Steps to run code
 clone repo
 * `git clone https://github.com/kumarvikramshahi/blox-task.git`
