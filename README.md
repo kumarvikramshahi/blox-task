@@ -56,11 +56,17 @@ cd question_4
 uvicorn 3_api_with_rate_limiter:app --reload --port 3000
 ```
 
+Make below curl request 15 times consecutivly without waiting and then again making 16th request just after 15th, you will get Rate limit message. after that wait for 1 minute to test next question.
+* curl request
+```
+curl --location 'localhost:3000'
+```
 * To run Question_4 (2nd part - don't close fastAPI server running in previous question, so open new terminal tab inside question_4 folder):-
 
 ```
 python 2_20calls_per_min.py
 ```
+if you are getting rate limiting message, Plase wait for 1 minute before making next request because there is 1 minute extra penalty on excedding limit.
 
 * To run Question_4 (1st part)
 
