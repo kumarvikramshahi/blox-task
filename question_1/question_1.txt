@@ -1,0 +1,39 @@
+Elaborate what your internship or academic projects were?
+ANS = I would explain the project that i worked in my previous job (my first job). I was single handly responsible for building a Machine Learning model validation pipeline. 
+
+a. What did the system do?
+ANS = The ML model validation pipeline was a service that was responsible for validating ML models whether it is working fine or not, also data gathered from here were used by ML engineers to retrain and fine tune the model.
+Models were :- Object detection and face recognition model.
+Explanation of the Pipeline:
+> We utilized Ray clusters (suggested by senior engineers and validated through a proof of concept I conducted) for serving the ML models.
+> Apache Airflow was employed for scheduling Python scripts. These scripts fetched random images from user accounts in MongoDB: 10 images from 12 AM to 12 PM and another 10 images from 12 PM to 12 AM.
+> The fetched images were then processed by the model to re-detect or re-recognize, using a minor version obtained from the last training cycle.
+> Ray clusters played a crucial role in managing the serving of ML models and allowed for dynamic resource allocation based on each model's needs. Later, we expanded the use of this cluster to handle requests from other services as well.
+> Overall, the Ray cluster was the main component of the entire pipeline.
+
+b. What other systems have you seen in the wild like that?
+ANS = There are several other software options in the market that facilitate distributed computing, such as PySpark and AWS Neuron. However, these alternatives often lack at least one critical feature—either robust distributed computing capabilities or feasibility for deep learning tasks. We needed a solution that specifically supports machine learning model development and allows for easy deployment of ML models into production, similar to traditional services. After evaluating our options, we found that Ray clusters (an open-source software) were the only choice that met our requirements effectively.
+
+c. How do you approach the development problem?
+ANS = I approached the problem as follows:
+> I was provided with a problem set by the ML team, and as a backend engineer, it was my responsibility to conduct research and propose a solution.
+> First, I designed the architecture of the pipeline.
+> After receiving approval for the architecture, I sought assistance from senior and principal engineers regarding ML model serving.
+> We then moved on to the Ray cluster proof of concept (POC) to understand its pros, cons, and limitations.
+> Once we were satisfied with our findings and received team approval, we proceeded to the development phase of model serving.
+> During the development of the model serving service, we encountered challenges such as enabling GPU usage for models and designing the project to facilitate hassle-free addition of new models.
+> To address the GPU issue, we did research using Google resources and collaborated with ML team members while also following NVIDIA documentation for their drivers.
+> For the design challenge, we created a specific class template that standardized model additions, making it easy to deploy new models.
+> After completing the model serving component, we moved on to developing a Python script and scheduling it to run at specific intervals.
+
+d. What were interesting aspects where you copied code from Stack Overflow?
+ANS = Interesting aspects that i copied was the code that let us easily use GPU by different model of different architecture like tenserflow and pytorch.
+> that was not a single piece of code we copied.
+> we copied different set of code for different architectures and that saved our ass.
+> since GPU is critical for fast running of ML models so it was critical to us and with help of Stack Overflow we were able to understand that tenserflow and pytorch have different architecture and made for different purposes.
+> and also need proper configuration of dependecies to let them work together.
+
+e. What did you learn from some very specific copy paste? Mention explicitly some of them?
+ANS = 
+> one specific copy paste that i mentioned in previous question helped me learn about tenserflow and pytorch difference. these two have different working underneath that's why need different enviroment to work or proer critical configuration to let them work together.
+> another thing i learned is about middleware of fastAPI while developing the same project. we can use middleware for manipulating both request and response of HTTP request. we can even add our custom headers to the request and response both.
